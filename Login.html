@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Student Registration Form</title>
+<style type="text/css">
+#footer{ background:url(../../../xampp/htdocs/mysite%20images/header.jpg); padding-top:20px; padding-bottom:60px; margin-top:350px;}
+h1{ color:#900;}
+</style>
+<script>
+function checkData()
+{
+	erruid.innerHTML="";	errpwd.innerHTML="";
+	errcpwd.innerHTML="";	errage.innerHTML="";
+	errjod.innerHTML="";	erremail.innerHTML="";
+	var result=true;
+	if(frm.txtuid.value=="")
+	{
+		erruid.innerHTML="Userid must be given";
+		result=false;
+	}
+	if(frm.txtpwd.value.length<6)
+	{
+	errpwd.innerHTML="Lenght must be more than 6 letters";
+	result= false;
+	}
+	if(frm.txtpwd.value != frm.txtcpwd.value)
+	{
+		errcpwd.innerHTML="Mismatch";
+				result= false;
+	}
+	if(frm.txtage.value == "")
+	{
+		errage.innerHTML="age must be given";
+				result= false;
+	
+	}
+return result;
+}
+</script>
+</head>
+<body>
+<form name=frm method=post action="abc.php" 
+onsubmit="return checkData()" onreset="return false">
+<table width="748" height="525" cellspacing="30" border="10">
+<tr><th colspan=50><h1>REGISTRATION FORM</h1>
+<tr>
+<td height="30" colspan="2" align="center">User Id <td><input name="txtuid"><td id=erruid>
+<tr><td height="30" colspan="2" align="center">Password <td>
+<input name=txtpwd type=password><td id=errpwd>
+<tr><td height="30" colspan="2" align="center">Confirm Password <td>
+<input name=txtcpwd type=password><td id=errcpwd>
+<tr><td height="30" colspan="2" align="center">Age <td><input type=number name=txtage><td id=errage>
+<tr><td height="30" colspan="2" align="center">Joining Date <td><input name=txtjod type=date>
+<td id=errjod>
+<tr><td height="30" colspan="2" align="center">Email Id <td><input type=email name=txtemail><td id=erremail>
+<tr><td height="30" colspan="2" align="center"><input type=submit >
+<td><input type=reset>
+</form>
+</table>
+<div id="footer">
+<div class="container">
+<p>Copyright 2016 </p>All Rights Reserved
+</div>
+</div>
+</body>
+</html>
+
+
+
